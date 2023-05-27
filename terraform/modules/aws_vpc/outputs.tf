@@ -22,9 +22,9 @@ output "enable_dns_hostnames" {
   value = aws_vpc.vpc.enable_dns_hostnames
 }
 
-output "enable_classiclink" {
-  value = aws_vpc.vpc.enable_classiclink
-}
+# output "enable_classiclink" {
+#   value = aws_vpc.vpc.enable_classiclink
+# }
 
 output "main_route_table_id" {
   value = aws_vpc.vpc.main_route_table_id
