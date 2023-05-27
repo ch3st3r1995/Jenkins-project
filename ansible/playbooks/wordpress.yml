@@ -1,4 +1,5 @@
-- name: deploy wordpress
+---
+ - name: deploy wordpress
    hosts: all
    become: True
    gather_facts: False
