@@ -17,6 +17,14 @@ pipeline {
                 }
             }
         }
+        stage('Terraform apply') {
+          when { expression { params.ExecuteAction == 'build'}}
+            steps {
+                dir('terraform') {
+                    sh 'terraform apply --auto-approve'
+                }
+            }
+        }
     }
 }
 
