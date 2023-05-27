@@ -9,5 +9,14 @@ pipeline {
                 }
             }
         }
+        stage('Terraform plan') {
+            when { expression { params.ExecuteAction == 'build'}}
+            steps {
+                dir('terraform') {
+                    sh 'terraform plan'
+                }
+            }
+        }
     }
 }
+
