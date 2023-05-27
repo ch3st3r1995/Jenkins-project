@@ -42,10 +42,10 @@ pipeline {
           }  
         }
         stage('Execute Ansible') {
-            when { expression { params.ExecuteAction == 'build' } }
-            steps {
-                dir('ansible') {
-                    sh 'ansible-playbook ./playbooks/wordpress.yml'
+          when { expression { params.ExecuteAction == 'build' } }
+          steps {
+            dir('ansible') {
+                sh 'ansible-playbook ./playbooks/wordpress.yml'
                 }
             }
         }
