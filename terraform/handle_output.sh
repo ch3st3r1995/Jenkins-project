@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 terraform output --json | jq .ec2_instance1.value -r >> ../ansible/inventory/hosts
 terraform output --json | jq .ec2_instance2.value -r >> ../ansible/inventory/hosts
