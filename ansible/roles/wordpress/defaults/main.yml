@@ -10,8 +10,8 @@ wordpress_packages:
   - php-mysqlnd
   - php-mbstring
 
-wordpress_database_host: 'terraform-20230526023151521600000002.cy7ikyjjoew0.us-east-1.rds.amazonaws.com' 
+wordpress_database_host: rds_host
 wordpress_database: 'wordpress'
 wordpress_user: 'admin'
-wordpress_password: 'adminadmin' 
+wordpress_password: rds_password
 wordpress_configuration: '/var/www/html/wp-config.php'
