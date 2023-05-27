@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     parameters {
-     choice(
+     choice{
         name: 'ExecuteAction',
         choices: ['build', 'destroy'],
-        describtion: 'wich action to take'
-    )
+        description: 'wich action to take'
+     }
     }
 
     stages {
