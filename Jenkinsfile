@@ -17,30 +17,30 @@ pipeline {
                 }
             }
         }
-        stage('Terraform plan') {
-            when { expression { params.ExecuteAction == 'build'}}
-            steps {
-                dir('terraform') {
-                    sh 'terraform plan'
-                }
-            }
-        }
-        stage('Terraform apply') {
-          when { expression { params.ExecuteAction == 'build'}}
-            steps {
-                dir('terraform') {
-                    sh 'terraform apply --auto-approve'
-                }
-            }
-        }
-        stage('Catch terraforms outputs') {
-          when { expression { params.ExecuteAction == 'build'}}
-          steps {
-            dir('terraform') {
-                sh './handle_outputs.sh'
-            }
-          }  
-        }
-    }
-}
+//         stage('Terraform plan') {
+//             when { expression { params.ExecuteAction == 'build'}}
+//             steps {
+//                 dir('terraform') {
+//                     sh 'terraform plan'
+//                 }
+//             }
+//         }
+//         stage('Terraform apply') {
+//           when { expression { params.ExecuteAction == 'build'}}
+//             steps {
+//                 dir('terraform') {
+//                     sh 'terraform apply --auto-approve'
+//                 }
+//             }
+//         }
+//         stage('Catch terraforms outputs') {
+//           when { expression { params.ExecuteAction == 'build'}}
+//           steps {
+//             dir('terraform') {
+//                 sh './handle_outputs.sh'
+//             }
+//           }  
+//         }
+//     }
+// }
 
