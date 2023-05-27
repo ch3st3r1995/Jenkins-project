@@ -37,7 +37,7 @@ pipeline {
           when { expression { params.ExecuteAction == 'build' } }
           steps {
             dir('terraform') {
-                sh './handle_output.sh'
+                sh 'sudo ./handle_output.sh'
             }
           }  
         }
