@@ -45,7 +45,7 @@ pipeline {
           when { expression { params.ExecuteAction == 'build' } }
           steps {
             dir('ansible') {
-                sh 'ansible-playbook ./playbooks/wordpress.yml'
+                sh 'ansible-playbook ./roles/wordpress.yml'
                 }
             }
         }
