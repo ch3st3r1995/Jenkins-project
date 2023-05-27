@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
      choice{
-        name: 'ExecuteAction',
+        name: ExecuteAction,
         choices: ['build', 'destroy'],
         description: 'wich action to take'
      }
