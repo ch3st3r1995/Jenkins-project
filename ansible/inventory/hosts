@@ -31,7 +31,3 @@
 # Here's another example of host ranges, this time there are no
 # leading 0s:
 ## db-[99:101]-node.example.com
-
-
-3.86.193.137
-34.201.210.97
