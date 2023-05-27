@@ -214,7 +214,7 @@ data "aws_ssm_parameter" "linuxAmi" {
 #Create key-pair for logging into EC2
 module "key_pair" {
   source     = "./modules/aws_key_pair"
-  key_name   = "public-ssh"
+  key_name   = "jenkins-public-ssh"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
