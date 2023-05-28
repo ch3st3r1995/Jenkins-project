@@ -1,6 +1,6 @@
 #S3 backend
 terraform {
-  required_version = "1.4.6"
+  required_version = "1.4.5"
   backend "s3" {
     region  = "us-east-1"
     profile = "default"
