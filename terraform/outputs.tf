@@ -1,11 +1,11 @@
 output "ec2_instance1" {
-  value = module.ec2_instance1.public_ip
+  value = module.ec2_instance1.instance_public_ip
 }
 
 output "ec2_instance2" {
-    value = module.ec2_instance2.public_ip
+    value = module.ec2_instance2.instance_public_ip
 }
 
 output "rds_endpoint" {
-    value = module.rds.endpoint
+    value = module.rds.rds_endpoint
 }
