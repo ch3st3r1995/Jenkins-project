@@ -44,7 +44,3 @@ variable "root_volume_encrypted" {
   description = "(Optional) Enables EBS encryption on the volume (Default: false). Cannot be used with snapshot_id. Must be configured to perform drift detection."
   default     = false
 }
-
-variable "ec2_instance_public_ip" {
-  
-}
