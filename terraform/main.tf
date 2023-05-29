@@ -224,7 +224,6 @@ module "ec2_instance1" {
   key_name               = module.key_pair.id
   vpc_security_group_ids = [module.sg-ec2.security_group_id]
   subnet_id              = module.public-subnet1.id
-  public_ip     = var.ec2_instance1_public_ip
 }
 
 
@@ -234,7 +233,6 @@ module "ec2_instance2" {
   key_name               = module.key_pair.id
   vpc_security_group_ids = [module.sg-ec2.security_group_id]
   subnet_id              = module.public-subnet2.id
-  public_ip     = var.ec2_instance1_public_ip
 }
 
 
