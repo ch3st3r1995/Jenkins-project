@@ -1,10 +1,7 @@
 #!/bin/bash
-public1_ip=$(terraform output -raw ec2_instance1_public_ip)
-echo "$public1_ip" >> ../ansible/inventory/hosts
-public2_ip=$(terraform output -raw ec2_instance2_public_ip)
-echo "$public2_ip" >> ../ansible/inventory/hosts
-# terraform output --json | jq .ec2_instance1.value -r >> ../ansible/inventory/hosts
-# terraform output --json | jq .ec2_instance2.value -r >> ../ansible/inventory/hosts
+
+terraform output --json | jq .ec2_instance1.value -r >> ../ansible/inventory/hosts
+terraform output --json | jq .ec2_instance2.value -r >> ../ansible/inventory/hosts
 rdsHost=$(terraform output --json | jq .rds_endpoint.value -r |cut -d ':' -f 1)
 echo $rdsHost
 sed -i "s/rds_host/$rdsHost/g" ../ansible/roles/wordpress/defaults/main.yml
