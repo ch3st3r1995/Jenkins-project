@@ -289,6 +289,3 @@ module "route53_record" {
   dns_name    = "wordpress.serhii-nazarenko.net" #replace with your dns name
   zone_id     = "Z094474823ICLZ6NHLLLB"        #replace with your zone id 
 }
-
-terraform output --json | jq .ec2_instance1.value -r >> ../ansible/inventory/hosts
-terraform output --json | jq .ec2_instance2.value -r >> ../ansible/inventory/hosts
