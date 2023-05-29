@@ -7,5 +7,5 @@ output "ec2_instance2" {
 }
 
 output "rds_endpoint" {
-    value = module.rds.rds_endpoint
+    value = module.rds.endpoint
 }
