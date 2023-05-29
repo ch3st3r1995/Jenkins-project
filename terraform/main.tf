@@ -290,19 +290,3 @@ module "route53_record" {
   zone_id     = "Z094474823ICLZ6NHLLLB"        #replace with your zone id 
 }
 
-data "external" "ec2_instance1_output" {
-  program = ["bash", "-c", "terraform output --json | jq .ec2_instance1.value -r"]
-}
-
-output "ec2_instance1_public_ip" {
-  value = data.external.ec2_instance1_output.result
-}
-
-data "external" "ec2_instance2_output" {
-  program = ["bash", "-c", "terraform output --json | jq .ec2_instance2.value -r"]
-}
-
-output "ec2_instance2_public_ip" {
-  value = data.external.ec2_instance2_output.result
-}
-
