@@ -45,3 +45,6 @@ variable "root_volume_encrypted" {
   default     = false
 }
 
+variable "ec2_instance_public_ip" {
+  
+}
