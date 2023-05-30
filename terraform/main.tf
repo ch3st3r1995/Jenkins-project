@@ -226,6 +226,9 @@ module "ec2_instance1" {
   subnet_id              = module.public-subnet1.id
 }
 
+output "public_ip1" {
+  value = aws_instance.ec2_instance1.public_ip
+}
 
 module "ec2_instance2" {
   source                 = "./modules/aws_ec2"
@@ -233,6 +236,10 @@ module "ec2_instance2" {
   key_name               = module.key_pair.id
   vpc_security_group_ids = [module.sg-ec2.security_group_id]
   subnet_id              = module.public-subnet2.id
+}
+
+output "public_ip2" {
+  value = aws_instance.ec2_instance2.public_ip
 }
 
 
