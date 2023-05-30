@@ -24,7 +24,7 @@ resource "aws_db_instance" "db" {
   multi_az                    = var.multi_az
   db_name                     = var.db_name
   parameter_group_name        = var.parameter_group_name
-  password                    = local.rds_creds.rdspassword
+  password                    = local.rds_creds.password
   publicly_accessible         = var.publicly_accessible
   skip_final_snapshot         = var.skip_final_snapshot
   storage_encrypted           = var.storage_encrypted
