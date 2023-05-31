@@ -14,21 +14,3 @@ rdsPassword=$(aws secretsmanager get-secret-value --secret-id rds-credentials --
 echo $rdsPassword
 sed -i "s/rds_password/$rdsPassword/g" ../ansible/roles/wordpress/defaults/main.yml
 cat ../ansible/roles/wordpress/defaults/main.yml
-# rdsHost=$(terraform output --json | jq .rds_endpoint.value -r |cut -d ':' -f 1)
-# echo $rdsHost
-# sed -i "s/rds_host/$rdsHost/g" ../ansible/roles/wordpress/defaults/main.yml
-# cat ../ansible/roles/wordpress/defaults/main.yml
-# rdsPassword=$(aws secretsmanager get-secret-value --secret-id rds-credentials --region us-east-1 | jq .SecretString | cut -d ':' -f 2 | tr -d '"''\''}')
-# sed -i "s/rds_password/$rdsPassword/g" ../ansible/roles/wordpress/defaults/main.yml
-
-
-# terraform output --json | jq .ec2_instance1.value -r >> ../ansible/inventory/hosts
-# terraform output --json | jq .ec2_instance2.value -r >> ../ansible/inventory/hosts
-# rdsHost=$(terraform output --json | jq .rds_endpoint.value -r | cut -d ':' -f 1)
-# echo $rdsHost
-# sed -i "s/rds_host/$rdsHost/g" ../ansible/roles/wordpress/defaults/main.yml
-# cat ../ansible/roles/wordpress/defaults/main.yml
-# rdsPassword=$(aws secretsmanager get-secret-value --secret-id rds_mysql --region us-east-1 | jq .SecretString | cut -d ':' -f 2 | tr -d '"''\\''}')
-# echo $rdsPassword
-# sed -i "s/rds_password/$rdsPassword/g" ../ansible/roles/wordpress/defaults/main.yml
-# cat ../ansible/roles/wordpress/defaults/main.yml
