@@ -8,7 +8,7 @@ echo $ec2_instance1_public_ip
 echo $ec2_instance2_public_ip
 sed -i "s/rds_host/$rdsHost/g" ../ansible/roles/wordpress/defaults/main.yml
 cat ../ansible/roles/wordpress/defaults/main.yml
-rdsPassword=$(aws secretsmanager get-secret-value --secret-id rds_mysql --region us-east-1 | jq .SecretString | cut -d ':' -f 2 | tr -d '"''\\''}')
+rdsPassword=$(aws secretsmanager get-secret-value --secret-id rds-credentials --region us-east-1 | jq .SecretString | cut -d ':' -f 2 | tr -d '"''\\''}')
 echo $rdsPassword
 sed -i "s/rds_password/$rdsPassword/g" ../ansible/roles/wordpress/defaults/main.yml
 cat ../ansible/roles/wordpress/defaults/main.yml
