@@ -50,10 +50,10 @@ pipeline {
             }
         }
         stage('Terraform Destroy') {
-      when { expression { params.ExecuteAction == 'destroy' } }
-      steps {
-        dir('terraform') {
-          sh 'terraform destroy --auto-approve'
+          when { expression { params.ExecuteAction == 'destroy' } }
+          steps {
+            dir('terraform') {
+                sh 'terraform destroy --auto-approve'
         }
       }
     }
